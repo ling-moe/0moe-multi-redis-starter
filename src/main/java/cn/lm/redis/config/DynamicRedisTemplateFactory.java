@@ -51,16 +51,6 @@ public class DynamicRedisTemplateFactory<K, V> {
     private static final String REDIS_CLIENT_LETTUCE = "lettuce";
     private static final String REDIS_CLIENT_JEDIS = "jedis";
 
-    @Autowired
-    private RedisHelper redisHelper;
-
-    public void test(){
-        // 使用默认库
-        redisHelper.strSet("lm:key", "0moe");
-        // 使用指定库
-        RedisUtil.db(3).strSet("lm:key", "0moe");
-    }
-
     public DynamicRedisTemplateFactory(RedisProperties properties,
                                        ObjectProvider<RedisSentinelConfiguration> sentinelConfiguration,
                                        ObjectProvider<RedisClusterConfiguration> clusterConfiguration,

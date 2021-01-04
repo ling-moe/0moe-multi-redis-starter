@@ -7,8 +7,6 @@
 
 ### Prerequisites 项目使用条件
 
-你需要安装什么软件以及如何去安装它们。
-
 - Maven 3.6及更高版本
 - Java 8 及更高版本
 
@@ -28,7 +26,7 @@ mvn clean install -Dmaven.test.skip=true
 
 ```xml
 <dependency>
-	<groupId>cn.lm</groupId>
+    <groupId>cn.lm</groupId>
     <artifactId>0moe-multi-redis-starter</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 </dependency>
@@ -45,15 +43,15 @@ mvn clean install -Dmaven.test.skip=true
 3. 在代码中使用
 
 ```java
-    @Autowired
-    private RedisHelper redisHelper;
+@Autowired
+private RedisHelper redisHelper;
 
-    public void test(){
-        // 使用默认库
-        redisHelper.strSet("lm:key", "0moe");
-        // 使用指定库
-        RedisUtil.db(3).strSet("lm:key", "0moe");
-    }
+public void test(){
+    // 使用默认库
+    redisHelper.strSet("lm:key", "0moe");
+    // 使用指定库
+    RedisUtil.db(3).strSet("lm:key", "0moe");
+}
 ```
 
 ## Contributing 贡献指南
